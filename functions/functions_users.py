@@ -24,12 +24,12 @@ def exclude_user(id):
     
 def modify_user_password(id,nova_senha):
    with Session(engine) as session:
-      user = session.query(Usuario).filter(Usuario.id == id).update(Usuario.senha = nova_senha)
+      user = session.query(Usuario).filter(Usuario.id == id).update(senha = nova_senha)
       session.commit()
       return True if user else False
     
 def modify_user_name(id,novo_nome):
    with Session(engine) as session:
-      user = session.query(Usuario).filter(Usuario.id == id).update(Usuario.nome = novo_nome)
+      user = session.query(Usuario).filter(Usuario.id == id).update(nome = novo_nome)
       session.commit()
       return True if user else False
