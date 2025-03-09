@@ -20,7 +20,7 @@ def read_item(email:str,senha:int):
     else:
         return {'data':'error'}
     
-@app.get("usuarios/alteracao/senha/")
+@app.get("/usuarios/alteracao/senha/")
 def alterar_senha_usuario(id:int,senha:int):
     nova_senha = modify_user_password(id,senha)
     if nova_senha:
@@ -28,7 +28,7 @@ def alterar_senha_usuario(id:int,senha:int):
     else:
        return{'data':'error'}
 
-@app.get("usuarios/alteracao/nome/")
+@app.get("/usuarios/alteracao/nome/")
 def alterar_nome_usuario(id:int,nome:str):
     novo_nome = modify_user_name(id,nome)
     if novo_nome:
@@ -36,7 +36,7 @@ def alterar_nome_usuario(id:int,nome:str):
     else:
        return{'data':'error'}
     
-@app.get("usuarios/exclusao/")
+@app.get("/usuarios/exclusao/")
 def apagar_usuario(id:int):
     if exclude_user(id):
       return {'data':'ok'}
