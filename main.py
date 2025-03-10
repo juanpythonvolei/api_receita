@@ -5,9 +5,9 @@ from functions.functions_recipes import *
 app = FastAPI()
 
 @app.get("/login/")
-def adicionar_usuario(nome:str,usuario:str,email:str):
+def adicionar_usuario(nome:str,usuario:str,email:str,senha:int):
     try:
-        add_user(nome,usuario,email)
+        add_user(nome,usuario,email,senha)
         return {'data':'ok'}
     except:
         return {'data':'error'}
