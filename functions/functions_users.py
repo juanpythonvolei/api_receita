@@ -1,9 +1,9 @@
 from database.database import *
 from sqlalchemy.orm import Session
 
-def add_user(nome,usuario,email):
+def add_user(nome,usuario,email,senha):
     with Session(engine) as session:
-      new_user = Usuario(nome=nome,usuario=usuario,email=email)
+      new_user = Usuario(nome=nome,usuario=usuario,email=email,senha=senha)
       session.add(new_user)
       session.commit()
       return True if new_user else False
